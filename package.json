@@ -1,0 +1,26 @@
+{
+  "name": "@typeform/github-action-sync",
+  "version": "1.0.0",
+  "description": "Sync GitHub packages releases with npm",
+  "repository": "https://github.com/Typeform/github-actions.git",
+  "author": "Alexander Swed <lexswed@gmail.com>",
+  "license": "UNLICENSED",
+  "private": true,
+  "main": "sync.js",
+  "scripts": {
+    "build": "npx parcel-bundler build src/sync.ts --no-minify --target node --bundle-node-modules --no-source-maps"
+  },
+  "dependencies": {
+    "@actions/core": "^1.2.3",
+    "@actions/github": "^2.1.1",
+    "libnpmpublish": "^3.0.1",
+    "node-fetch": "^2.6.0",
+    "unzipper": "^0.10.11"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0.1",
+    "@types/node-fetch": "^2.5.7",
+    "@types/unzipper": "^0.10.3",
+    "typescript": "^3.9.2"
+  }
+}

@@ -1,0 +1,13 @@
+name: 'Sync'
+description: 'Sync GitHb packages with npm'
+inputs:
+  registry-to:
+    description: 'Registry to publish the package to'
+    required: true
+    default: 'https://npm.pkg.github.com'
+  token-to:
+    description: 'Auth token for destination registry'
+    required: true
+runs:
+  using: 'node12'
+  main: 'dist/sync.js'
