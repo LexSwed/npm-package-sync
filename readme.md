@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Sync packages
-        uses: Typeform/github-action-npm-sync
+        uses: LexSwed/github-action-npm-sync
         with:
           registry-to: 'https://npm.pkg.github.com'
           token-to: ${{ secrets.GITHUB_TOKEN }}
