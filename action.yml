@@ -1,4 +1,4 @@
-name: 'Sync'
+name: 'npm-package-sync'
 description: 'Sync GitHb packages with npm'
 inputs:
   registry-to:
@@ -11,3 +11,6 @@ inputs:
 runs:
   using: 'node12'
   main: 'dist/sync.js'
+branding:
+  icon: 'upload-cloud'
+  color: 'white'
