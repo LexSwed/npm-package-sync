@@ -1,18 +1,17 @@
-name: "Test workflow"
+name: 'Test workflow'
 on:
-    release:
-      types: [created]
-  jobs:
-    release:
-      runs-on: ubuntu-latest
-      steps:
-        - uses: actions/setup-node
-          with:
-            node-version: '12.x'
-            registry-url: 'https://registry.npmjs.org'
-        - name: Sync packages
-          uses: ./
-          with:
-            registry-to: 'https://npm.pkg.github.com'
-            token-to: ${{ secrets.GITHUB_TOKEN }}
-  
+  release:
+    types: [created]
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node
+        with:
+        node-version: '12.x'
+        registry-url: 'https://registry.npmjs.org'
+      - name: Sync packages
+        uses: ./
+        with:
+        registry-to: 'https://npm.pkg.github.com'
+        token-to: ${{ secrets.GITHUB_TOKEN }}
