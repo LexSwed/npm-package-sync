@@ -1,5 +1,5 @@
 {
-  "name": "@typeform/github-action-sync",
+  "name": "npm-package-sync",
   "version": "1.0.0",
   "description": "Sync GitHub packages releases with npm",
   "repository": "https://github.com/Typeform/github-actions.git",
@@ -8,7 +8,8 @@
   "private": true,
   "main": "sync.js",
   "scripts": {
-    "build": "npx parcel-bundler build src/sync.ts --no-minify --target node --bundle-node-modules --no-source-maps"
+    "build": "npx parcel-bundler build src/sync.ts --no-minify --target node --bundle-node-modules --no-source-maps",
+    "release": "npx semantic-release"
   },
   "dependencies": {
     "@actions/core": "^1.2.3",
@@ -22,5 +23,24 @@
     "@types/node-fetch": "^2.5.7",
     "@types/unzipper": "^0.10.3",
     "typescript": "^3.9.2"
+  },
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      [
+        "@semantic-release/npm",
+        {
+          "npmPublish": false,
+          "tarballDir": "test"
+        }
+      ],
+      [
+        "@semantic-release/github",
+        {
+          "assets": "test/*.tgz"
+        }
+      ]
+    ]
   }
 }
