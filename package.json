@@ -2,9 +2,9 @@
   "name": "npm-package-sync",
   "version": "1.0.0",
   "description": "Sync GitHub packages releases with npm",
-  "repository": "https://github.com/Typeform/github-actions.git",
+  "repository": "https://github.com/LexSwed/npm-package-sync.git",
   "author": "Alexander Swed <lexswed@gmail.com>",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "private": true,
   "main": "sync.js",
   "scripts": {
